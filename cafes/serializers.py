@@ -16,10 +16,5 @@ class CafeSerializer(serializers.ModelSerializer):
         close_time = obj.close_time
 
         now = now.strftime('%H:%M:%S')
-        #now = datetime.datetime.strptime(now, '%H:%M:%S')
-
-        print(open_time)
-        print(close_time)
-        print(now)
 
         return str(open_time) < now < str(close_time)
