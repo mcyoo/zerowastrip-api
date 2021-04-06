@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'aji002gu3*sqmb6gd^g9!d+5##uz-grj0!^-si^^moobpbk@+8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     'ec2-15-165-235-103.ap-northeast-2.compute.amazonaws.com', '127.0.0.1']
@@ -144,7 +144,7 @@ REST_FRAMEWORK = {
     ],
 }
 
-if not DEBUG:
+if DEBUG:
     REST_FRAMEWORK["DEFAULT_RENDERER_CLASSES"] = [
         "rest_framework.renderers.JSONRenderer",
     ]
