@@ -38,10 +38,11 @@ class Cafe(models.Model):
     lat = models.DecimalField(max_digits=10, decimal_places=6)
     lng = models.DecimalField(max_digits=10, decimal_places=6)
     content = models.TextField()
-    file1 = models.ImageField()
-    file2 = models.ImageField()
-    file3 = models.ImageField()
-    file4 = models.ImageField()
+    image1 = models.ImageField()
+    image2 = models.ImageField()
+    image3 = models.ImageField()
+    image4 = models.ImageField()
+    image5 = models.ImageField()
 
     def __str__(self):
         return self.title
