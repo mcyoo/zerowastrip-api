@@ -27,7 +27,7 @@ SECRET_KEY = 'aji002gu3*sqmb6gd^g9!d+5##uz-grj0!^-si^^moobpbk@+8'
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    'ec2-15-165-235-103.ap-northeast-2.compute.amazonaws.com', '127.0.0.1']
+    'ec2-15-165-235-103.ap-northeast-2.compute.amazonaws.com', 'powerbyjeseok.link', '127.0.0.1']
 
 
 # Application definition
