@@ -11,7 +11,6 @@ class Cafe(models.Model):
     Saturday = "Saturday"
     Sunday = "Sunday"
     no_holiday = "null"
-    no_holiday = "null"
 
     STATUS_CHOICES = (
         (Monday, "월요일"),
@@ -24,25 +23,26 @@ class Cafe(models.Model):
         (no_holiday, "휴일없음"),
     )
 
-    title = models.CharField(max_length=50)
-    name = models.CharField(max_length=50)
-    instagram = models.CharField(max_length=50)
-    address = models.CharField(max_length=200)
-    phone_number = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, blank=True)
+    name = models.CharField(max_length=50, blank=True)
+    instagram = models.CharField(max_length=50, blank=True)
+    address = models.CharField(max_length=200, blank=True)
+    phone_number = models.CharField(max_length=50, blank=True)
     open_time = models.TimeField(default="00:00:00")
     close_time = models.TimeField(default="00:00:00")
     holiday = models.CharField(
-        max_length=16, choices=STATUS_CHOICES, default=Monday
+        max_length=16, choices=STATUS_CHOICES, default=no_holiday
     )
-    meeting_time = models.DateField()
+    meeting_time = models.DateField(blank=True)
     lat = models.DecimalField(max_digits=10, decimal_places=6)
     lng = models.DecimalField(max_digits=10, decimal_places=6)
-    content = models.TextField()
-    image1 = models.ImageField()
-    image2 = models.ImageField()
-    image3 = models.ImageField()
-    image4 = models.ImageField()
-    image5 = models.ImageField()
+    content = models.TextField(blank=True)
+    image1 = models.ImageField(blank=True)
+    image2 = models.ImageField(blank=True)
+    image3 = models.ImageField(blank=True)
+    image4 = models.ImageField(blank=True)
+    image5 = models.ImageField(blank=True)
+    kakaomap_url = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
         return self.title
