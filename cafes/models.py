@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Cafe(models.Model):
+    DATE_INPUT_FORMATS = ['%Y-%m-%d']
 
     Monday = "Monday"
     Tuesday = "Tuesday"
@@ -33,7 +34,8 @@ class Cafe(models.Model):
     holiday = models.CharField(
         max_length=16, choices=STATUS_CHOICES, default=no_holiday
     )
-    special_holiday = models.DateField(blank=True)
+    special_holiday = models.DateField(
+        blank=True, input_formats=DATE_INPUT_FORMATS)
     check_time = models.BooleanField(default=False)
 
     lat = models.DecimalField(max_digits=10, decimal_places=6)
