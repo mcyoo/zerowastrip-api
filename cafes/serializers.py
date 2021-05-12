@@ -18,9 +18,15 @@ class CafeSerializer(serializers.ModelSerializer):
         open_time = obj.open_time
         close_time = obj.close_time
         holiday = obj.holiday
+        special_holiday = obj.special_holiday
+
+        now_time = now.strftime('%H:%M:%S')
+        now_date = now.strftime('%Y-%m-%d')
+
         if holiday == t[now.weekday()]:
             return False
 
-        now = now.strftime('%H:%M:%S')
+        if special_holiday == now_date:
+            return False
 
-        return str(open_time) < now < str(close_time)
+        return str(open_time) < now_time < str(close_time)
