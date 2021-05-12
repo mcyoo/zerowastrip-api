@@ -26,7 +26,7 @@ class CafeSerializer(serializers.ModelSerializer):
         if holiday == t[now.weekday()]:
             return False
 
-        if special_holiday == now_date:
+        if str(special_holiday) == now_date:
             return False
 
         return str(open_time) < now_time < str(close_time)
