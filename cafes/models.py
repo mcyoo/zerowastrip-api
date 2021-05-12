@@ -33,7 +33,9 @@ class Cafe(models.Model):
     holiday = models.CharField(
         max_length=16, choices=STATUS_CHOICES, default=no_holiday
     )
-    meeting_time = models.DateField(blank=True)
+    special_holiday = models.DateField(blank=True)
+    check_time = models.BooleanField(default=False)
+
     lat = models.DecimalField(max_digits=10, decimal_places=6)
     lng = models.DecimalField(max_digits=10, decimal_places=6)
     content = models.TextField(blank=True)
