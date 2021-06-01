@@ -37,14 +37,20 @@ class Cafe(models.Model):
         blank=True)
     check_time = models.BooleanField(default=False)
 
+    no_straw = models.BooleanField(default=False)
+    no_plasticCup = models.BooleanField(default=False)
+    use_biodegradable = models.BooleanField(default=False)
+    vegan = models.BooleanField(default=False)
+    discount_pruncup = models.BooleanField(default=False)
+    allow_pat = models.BooleanField(default=False)
+    food = models.BooleanField(default=False)
+    desert = models.BooleanField(default=False)
+    pruncup_rental = models.BooleanField(default=False)
+
     lat = models.DecimalField(max_digits=10, decimal_places=6)
     lng = models.DecimalField(max_digits=10, decimal_places=6)
     content = models.TextField(blank=True)
-    image1 = models.ImageField(blank=True)
-    image2 = models.ImageField(blank=True)
-    image3 = models.ImageField(blank=True)
-    image4 = models.ImageField(blank=True)
-    image5 = models.ImageField(blank=True)
+    image = models.ImageField(blank=True)
     kakaomap_url = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
